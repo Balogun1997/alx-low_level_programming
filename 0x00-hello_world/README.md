@@ -1,0 +1,1 @@
+alias makes coding fast
