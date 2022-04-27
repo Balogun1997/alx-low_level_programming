@@ -12,58 +12,22 @@
  * You can only use two loops in your code
  * You are not allowed to use switch
  * You are not allowed to use any ternary operation
- * Return: the encode string
+ * Return: the encoded string
  */
 char *leet(char *str)
 {
-	int i;
-	char a;
+	int i, j;
+	char a[6] = "aeotl";
+	char A[6] = "AEOTL";
+	char b[6] = "43071";
 
 	for (i = 0; *(str + i) != '\0'; ++i)
 	{
-		a = *(str + i);
-		*(str + i) = _1337(a);
+		for (j = 0; j <= 4; ++j)
+		{
+			if ((*(str + i) == a[j]) || (*(str + i) == A[j]))
+				*(str + i) = b[j];
+		}
 	}
-	*(str + i) = '\0';
 	return (str);
-}
-
-/**
- * _1337 - a function that takes a character and returns a character
- * it is mapped to
- *
- * @a: the character to be mapped;
- * Return: the mapped character 
- */
-
-char _1337(char a)
-{
-	char b = a;
-
-	while (a == 97 || a == 65)
-	{
-		b = '4';
-		break;
-	}
-	while (a == 101 || a == 69)
-	{
-		b = '3';
-		break;
-	}
-	while (a == 111 || a == 79)
-	{
-		b = '0';
-		break;
-	}
-	while (a == 116 || a == 84)
-	{
-		b = '7';
-		break;
-	}
-	while (a == 108 || a == 76)
-	{
-		b = '1';
-		break;
-	}
-	return (b);
 }
